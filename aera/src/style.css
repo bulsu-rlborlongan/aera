@@ -1,0 +1,191 @@
+:root {
+  --bg: #05070a;
+  --panel: #090d12;
+  --border: #1c2229;
+  --text: #ffffff;
+  --muted: #7d8792;
+  --accent: #65ff9a;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.aera {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- TOP BAR ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px var(--border);
+}
+
+.topbar h1 {
+  font-size: 28px;
+  letter-spacing: 6px;
+}
+
+.topbar p {
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status {
+  display: flex;
+  align-items: centers;
+  gap: var(--space-2);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.status-dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+/* ---------- WORKSPACE ---------- */
+
+.workspace {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.camera-container {
+  width: min(1100px, 90vw);
+  aspect-ratio: 16 / 9;
+  position: relative;
+  border: 1px solid #29313a;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.camera-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #66717c;
+}
+
+.camera-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.camera-placeholder h2 {
+  color: #aeb7c0;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.camera-placeholder p {
+  font-size: 13px;
+}
+
+/* ---------- SHAPES ---------- */
+
+.object-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border: 2px solid white;
+  opacity: 0.8;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  left: 30%;
+  top: 35%;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  left: 50%;
+  top: 45%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid white;
+  background: transparent;
+  border-top: none;
+  left: 65%;
+  top: 30%;
+}
+
+.controlbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 18px var(--space-5);
+  border-top:1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controlbar strong {
+  color: white;
+}
+
+#start-button {
+  margin-left: auto;
+  padding: 12px 20px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#start-button:hover {
+  background: #dce2e8;
+}
